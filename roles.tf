@@ -29,6 +29,7 @@ resource "aws_iam_policy" "step_function_policy" {
     Version = "2012-10-17"
     Statement = [{
       Action = [
+        "lambda:InvokeFunction",
         "logs:*"
       ]
       Effect   = "Allow"

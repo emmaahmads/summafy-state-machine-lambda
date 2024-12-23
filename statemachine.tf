@@ -59,11 +59,11 @@ resource "aws_cloudwatch_event_target" "start_sm" {
   role_arn   = aws_iam_role.cloudwatch_event_role.arn
 }
 
-# // allows StepFunction to invoke Lambda functions
+// allows StepFunction to invoke Lambda functions
 
 # resource "aws_lambda_permission" "allow_cloudwatch_to_invoke" {
 #   statement_id  = "AllowExecutionFromCloudWatch"
-#   action        = "states:StartExecution"
+#   action        = "lambda:InvokeFunction"
 #   function_name = aws_sfn_state_machine.state_machine.name
 #   principal     = "events.amazonaws.com"
 #   source_arn    = aws_cloudwatch_event_rule.s3_event_rule.arn
